@@ -6,16 +6,34 @@
 
 \RequirePackage{geometry}
 
-\RequirePackage{libertine}
+% \RequirePackage{libertine}
+
+\RequirePackage{multicol}
+
+\RequirePackage[colorlinks=false]{hyperref}
 % \RequirePackage{libertinust1math}
+
+\RequirePackage{inconsolata}
+
+\newcounter{pnum}[section]
 
 % Might want to make some colorboxes for these but that's a later me thing
 \theoremstyle{definition}
 \newtheorem*{theorem}{Theorem}
+\newtheorem*{notation}{Notation}
+\newtheorem*{definition}{Definition}
+\newtheorem*{constraints}{Constraints}
+\newtheorem*{observation}{Observation}
+\newtheorem*{question}{Question}
+\newtheorem*{idea}{Idea}
+\newtheorem*{example}{Example}
 \newtheorem*{problem}{Problem}
+\newtheorem{problemnum}[pnum]{Problem}
 \newtheorem*{solution}{Solution}
 \newtheorem*{exercise}{Exercise}
+\newtheorem{exercisenum}{Exercise}
 \newtheorem*{claim}{Claim}
+\newtheorem*{fact}{Fact}
 \newtheorem*{lemma}{Lemma}
 \newtheorem*{remark}{Remark}
 
@@ -26,17 +44,58 @@
 
 \newtcolorbox[]{chirpbox}{
     colback=black!5!white,
+    % colback=white,
     boxrule = 0pt,
     sharp corners,
     enhanced,
+    % borderline north={0pt}{0pt}{white},
+    % borderline east={0pt}{0pt}{white},
+    % borderline south={0pt}{0pt}{white},
+    borderline west={2pt}{0pt}{black}
+}
+
+\newtcolorbox[]{sidebox}{
+    colback=black!5!white,
+    colback=white,
+    boxrule = 0pt,
+    sharp corners,
+    enhanced,
+    borderline north={0pt}{0pt}{white},
+    borderline east={0pt}{0pt}{white},
+    borderline south={0pt}{0pt}{white},
     borderline west={2pt}{0pt}{black}
 }
 
 \renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\grad}{\operatorname{\textsf{grad}}}
+
+\newcommand{\sgn}{\operatorname{\textsf{sgn}}}
+
+% Perhaps change these
+\renewcommand{\Pr}{\operatorname{\mathbf{P}}}
+\newcommand{\E}{\operatorname{\mathbf{E}}}
+
+\DeclareMathOperator{\rank}{rank}
+
+\newcommand{\T}{\mathsf{T}}
+
+\newcommand{\arctanh}{\operatorname{arctanh}}
+
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\A}{\mathbf{A}}
+
+\newcommand{\hr}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.7pt}}}
 
 \RequirePackage{enumitem}
 
 \setlist[enumerate, 1]{label=\textbf{\arabic*.}}
+\setlist[itemize]{topsep=0pt}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
